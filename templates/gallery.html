@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+	
+	<link rel="stylesheet" href="{% static 'my_app/css/gallery.css' %}">
+	
+{% endblock %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}	
+<div class="gallery">
+	<div class="preview-container" id="prev-cont">
+		<i class="fas fa-arrow-left" id="prev"></i>
+		<i class="fas fa-arrow-right" id="next"></i>
+		<div class="preview">
+			<img src="{% static 'my_app/images/player.jpg' %}"  id="firstImage">
+			<img src="{% static 'my_app/images/ichangu.JPG' %}">
+			<img src="{% static 'my_app/images/player.jpg' %}">
+			<img src="{% static 'my_app/images/ichangu.JPG' %}">
+			<img src="{% static 'my_app/images/player.jpg' %}">
+			<img src="{% static 'my_app/images/ichangu.JPG' %} " id="firstClone">
+
+		</div>
+	</div>
+	<div class="gallery-nav">
+		<ul>
+			<li class="active image-list" id="one" onclick="remove()"><a href="#one-one">Medalist Players/Team</a></li>
+			<li class="image-list" id="two" onclick="remove()"><a href="#two-two">Black Belt Players</a></li>
+			<li class="image-list" id="three" onclick="remove()"><a href="#three-three">All Players</a></li>
+		</ul>	
+	</div>
+	<div class="image-container">
+		<div class="pics" id="one-one">
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+		</div>
+		<div class="pics" id="two-two">
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious 2</b></h4> 
+			    <p>southpaw2222</p> 
+			  </div>
+			</div>
+
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+		</div>
+
+		<div class="pics" id="three-three">
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious 333333</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+			
+			<div class="card">
+			  <img src="{% static 'my_app/images/player.jpg' %}">
+			  <div class="container">
+			    <h4><b>Notorious</b></h4> 
+			    <p>southpaw</p> 
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+	{% block script %}
+		<script>	
+		
+			function remove(){
+			// let url = "{{request.path}}"
+			// if(url.includes('gallery')){}
+			document.getElementById('prev-cont').style.height = 0
+			}
+		
+		</script>
+	{% endblock %}
+{% endblock %}

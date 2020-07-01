@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'my_app/css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div class="main">
+		<div class="contact">
+			<h1>Contact</h1>
+		</div>
+		<hr>
+		<div class="info">
+			<div class="form-div">
+				 <form action="/action_page.php">
+				    <!-- <label for="fname">Name</label> -->
+				    <input class="inputs" type="text" id="name" name="name" placeholder="Your name..">
+
+				    <!-- <label for="lname">Email</label> -->
+				    <input type="text" class="inputs"  id="email" name="email" placeholder="Email..">
+				  	<textarea name="message" class="inputs"  rows="8" cols="50" placeholder="Message"></textarea>
+				    <button class="inputs" id="btn" type="submit">Send</button>
+				</form>
+			</div>
+
+			<div class="address">
+				
+					<div class="div1">
+						<h3>Ichangu Karate-Do</h3>
+						<p style="text-align:center">Nagarjun, Balaju</p>
+					<!-- </div>
+					<div> -->
+						<p class="pm">9818380761</p>
+						<p class="pm">srjthapa53@gmail.com</p>
+						<hr>
+					</div>
+
+				
+				<div class="social-app">
+					<a id="fb" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+					<a id="insta" href="#"><i class="fab fa-instagram fa-2x"></i></a>
+					<a id="youtube" href="#"><i class="fab fa-youtube fa-2x"></i></a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.680064627934!2d85.2868361815629!3d27.737036155511277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18b9877ece79%3A0xf889e25145f867ee!2sRaniban%20Shiva%20Mandir!5e0!3m2!1sen!2snp!4v1593318622882!5m2!1sen!2snp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<!-- <script>document.addEventListener('mousewheel',{passive: true})</script> -->
+
+{% endblock %}

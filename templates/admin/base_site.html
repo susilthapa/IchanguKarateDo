@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Ichnagu{% endblock %}
+
+{% block extrastyle %}
+    <style>
+   
+    #header {
+        background-color: #2aabd2;
+        color: lawngreen;
+
+    }
+    #content-main caption{
+        background-color: #2aabd2;
+    }
+
+    #content-related{
+    	background-color: white;
+    }
+
+
+    </style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Ichangu</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

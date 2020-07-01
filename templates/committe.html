@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+	
+	<link rel="stylesheet" href="{% static 'my_app/css/committee.css' %}">
+	
+{% endblock %}
+
+{% block content %}
+<div class="main">
+	<div class="heading"><h1>Ichangu Karate-Do Committee Members</h1></div>
+	<hr id="committee-hr"/>
+	<div class="committee-container">
+
+		<div class="founder">
+			<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+		</div>
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="info">
+		 	<h3 class="name">Name LastName</h3>
+		 	<p class="position">President</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
