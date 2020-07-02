@@ -133,10 +133,6 @@ body{
 	color: black;
 }
 
-/*.gallery-nav li.active a{
-	color: black;
-}
-*/
 .pics
 {
 	width: 100%;
@@ -152,48 +148,107 @@ body{
 }
 
 .card{
-	width: 250px;
+	width: 280px;
 	height: 350px;
 	padding: 7px;
 	margin: 10px;
 	background-color: #222222;
 	border-radius: 5px;
-	transition: 0.3s;
 }
 
 .card .container{
 	margin-top: 10px;
 }
-.card:hover {
-	transform: scale(1.07);
-	cursor: pointer;
-}
+
+
 .card img{
 	max-width: 100%;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: 0.4s;
 }
 
-/*@media screen and (max-width: 1010px){
-	body {
-    	font-size: 15px;
-	}*/
+.card img:hover {
+	transform: scale(1.13);
+}
 
+.all{
+	display: none;
+	flex-wrap: wrap;
+	min-height: 75vh;
+	justify-content: center;
+}
 
-@media screen and (max-width: 768px){
-	.gallery-nav{
-		z-index: auto;
-	}
+.all-images{
+	width: 320px;
+	height: 200px;
+	overflow: hidden;
+	cursor: pointer;
+}
 
-	.card{
-		z-index: -1;
+.all-images img{
+	max-width: 100%; 
+	min-height: 100%;
+}
+
+#lightbox{
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	display: none;
+}
+
+#lightbox.active{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#lightbox img{
+	padding: 4px;
+	max-width: 90%;
+	max-height: 90%;
+	background-color: black;
+	border: 2px solid white;
+}
+
+@media screen and (max-width: 1022px){
+	.all-images{
+		width: 420px;
+		height: 255px;
 	}
 }
 
+@media screen and (max-width: 900px){
+	.all-images{
+		width: 600px;
+		height: 370px;
+	}
+}
 @media screen and (max-width: 870px){
 	.card{
 		width: 300px;
 		height: 400px;
 	}
 }
+
+@media screen and (max-width: 768px){
+	.gallery-nav{
+		z-index: auto;
+	}
+
+	.card:hover{
+		transform: none;
+	}
+	.all-images{
+		width: 500px;
+		height: 270px;
+	}
+}
+
 
 @media screen and (max-width: 600px){
 	.gallery-nav ul{
@@ -218,6 +273,10 @@ body{
 		width: 90%;
 		margin-top: 5px;
 	}
+	.all-images{
+		width: 320px;
+		height: 220px;
+	}
 
 }
 
@@ -227,5 +286,8 @@ body{
 	}
 	.gallery-nav{
 		margin-top: -64px;  /* margin with preview image*/
+	}
+	.image-container{
+		margin-top: 45px;
 	}
 }

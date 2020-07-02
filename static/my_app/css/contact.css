@@ -30,6 +30,7 @@ body{
 
 .form-div{
 	width: 45%;
+	animation: info 1s linear;
 }
 
 form{
@@ -71,6 +72,7 @@ textarea{
 	word-spacing: 5px;
 	letter-spacing: 3px;
 	border: 1px solid;
+	animation: address 1s linear;
 }
 
 .div1{
@@ -113,16 +115,44 @@ textarea{
 	border: 10px solid lightgray;
 	margin-top: 40px;
 	border-radius: 5px;
+	animation: map 2s linear ;
 }
 
 
-@media screen and (min-width: 1025px){
-	.main{
-		min-height: 85vh;
+@keyframes map {
+	from{
+		transform: scale(0);
+		
+	}
+
+	/*99%{
+		opacity: 0;
+	}*/
+/*
+	100%{
+		opacity: 1;
+	}*/
+}
+
+
+@keyframes info {
+	from{
+		transform: translateX(-200px);
 	}
 }
 
+@keyframes address {
+	from{
+		transform: translateX(200px);
+	}
+}
+
+
 @media screen and (max-width: 1024px){
+	.main{
+		min-height: 85vh;
+		width: 85%;
+	}
 	footer{
 		position: relative;
 	}
@@ -131,6 +161,10 @@ textarea{
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	.form-div, .address{
+		animation: none;
 	}
 
 	.form-div, .address{
@@ -155,13 +189,30 @@ textarea{
 @media screen and (max-width: 768px){
 	.main{
 		width: 90%;
+	}
 
+	textarea{
+		height: 100px
+	}
+
+	.div1 h3, p {
+    	margin-bottom: 5%;
 	}
 	
 }
 
+/*@media screen and (max-height: 755px){
+
+
+}*/
+
+
+
 
 @media screen and (max-width: 540px){
+	/*.main{
+		width: 
+	}*/
 	.form-div, .address{
 		width: 100%;
 
@@ -177,23 +228,16 @@ textarea{
 	  	border-radius: 4px;
 	} 
 
+	.map{
+		width: 100%;
+		border: 5px solid;
+		height: 350px;
+		animation: none;
+	}
+
 }
 
-@media screen and (max-height: 755px){
-	
-	.main{
-		width: 80%;
-	}
-	
 
-	textarea{
-		height: 100px
-	}
-
-	.div1 h3, p {
-    	margin-bottom: 5%;
-	}
-}
 
 /*@media screen and (min-height: 668px){
 	footer{

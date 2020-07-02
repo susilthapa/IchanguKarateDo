@@ -4,7 +4,7 @@
 // document.addEventListener("DOMContentLoaded", ()=>{
 window.onload =
 	// response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
-	document.cookie = 'samesite=strict'
+	// document.cookie = 'samesite=strict'
   	/*======
 		Home Animations
   	=======*/
@@ -41,8 +41,7 @@ window.onload =
 
 	// Auto dispaly-Image
 	if(window.location.href.includes('gallery')){
-		console.log('gallery')
-		window.setInterval(nextImage, 3000)
+		let intervalId = window.setInterval(nextImage, 3000)
 	
 
 		// Counter

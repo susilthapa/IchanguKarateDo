@@ -27,9 +27,9 @@
 	</div>
 	<div class="gallery-nav">
 		<ul>
-			<li class="active image-list" id="one" onclick="remove()"><a href="#one-one">Medalist Players/Team</a></li>
-			<li class="image-list" id="two" onclick="remove()"><a href="#two-two">Black Belt Players</a></li>
-			<li class="image-list" id="three" onclick="remove()"><a href="#three-three">All Players</a></li>
+			<li class="active image-list" id="one"><a href="#one-one">Medalist Players/Team</a></li>
+			<li class="image-list" id="two"><a href="#two-two">Black Belt Players</a></li>
+			<li class="image-list" id="three"><a href="#three-three">All Players</a></li>
 		</ul>	
 	</div>
 	<div class="image-container">
@@ -116,57 +116,75 @@
 			</div>
 		</div>
 
-		<div class="pics" id="three-three">
-			<div class="card">
-			  <img src="{% static 'my_app/images/player.jpg' %}">
-			  <div class="container">
-			    <h4><b>Notorious 333333</b></h4> 
-			    <p>southpaw</p> 
-			  </div>
+		<div class="all" id="three-three">
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-1.jpg' %}" alt="">
 			</div>
 
-			<div class="card">
-			  <img src="{% static 'my_app/images/player.jpg' %}">
-			  <div class="container">
-			    <h4><b>Notorious</b></h4> 
-			    <p>southpaw</p> 
-			  </div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-2.jpg' %}" alt="">
 			</div>
-			
-			<div class="card">
-			  <img src="{% static 'my_app/images/player.jpg' %}">
-			  <div class="container">
-			    <h4><b>Notorious</b></h4> 
-			    <p>southpaw</p> 
-			  </div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-4.jpg' %}" alt="">
 			</div>
-			
-			<div class="card">
-			  <img src="{% static 'my_app/images/player.jpg' %}">
-			  <div class="container">
-			    <h4><b>Notorious</b></h4> 
-			    <p>southpaw</p> 
-			  </div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-5.jpg' %}" alt="">
 			</div>
-			
-			<div class="card">
-			  <img src="{% static 'my_app/images/player.jpg' %}">
-			  <div class="container">
-			    <h4><b>Notorious</b></h4> 
-			    <p>southpaw</p> 
-			  </div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-6.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-2.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-8.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-5.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-8.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-1.jpg' %}" alt="">
+			</div>
+
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-2.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-4.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-5.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-6.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-2.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-8.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-5.jpg' %}" alt="">
+			</div>
+			<div class="all-images">
+				<img src="{% static 'my_app/images/all/player-8.jpg' %}" alt="">
 			</div>
 		</div>
 	</div>
 </div>
 	{% block script %}
+		<script src="{% static 'my_app/js/lightbox.js' %}"></script>
 		<script>	
-		
-			function remove(){
-			// let url = "{{request.path}}"
-			// if(url.includes('gallery')){}
+			document.querySelectorAll(".gallery-nav li").forEach(item =>{
+				item.addEventListener('click', ()=>{
 			document.getElementById('prev-cont').style.height = 0
-			}
+				
+			})
+		})
 		
 		</script>
 	{% endblock %}

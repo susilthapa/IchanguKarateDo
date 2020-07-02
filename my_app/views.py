@@ -11,5 +11,8 @@ class ContactPagView(TemplateView):
 class GalleryPageView(TemplateView):
 	template_name = 'gallery.html'
 
-class CommittePageView(TemplateView):
-	template_name = 'committe.html'
+class CommitteePageView(TemplateView):
+	template_name = 'committee.html'
+
+class EventsPageView(TemplateView):
+	template_name = 'events.html'
