@@ -13,8 +13,10 @@ body{
 .heading {
 	text-align: center;
 	padding: 5px;
-	color: lightgray;
 	/*margin-top: 15px;*/
+}
+.heading h1{
+	color: lightgray;
 }
 
 #committee-hr{
@@ -67,6 +69,14 @@ body{
 	text-align: center;
 	margin-top: -30px;
 	margin-bottom: 10px;
+}
+
+.info h3{
+	color: black;
+}
+
+.info p{
+	color: green
 }
 
 .card img{

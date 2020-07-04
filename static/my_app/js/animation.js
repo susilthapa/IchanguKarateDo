@@ -41,22 +41,30 @@ window.onload =
 
 	// Auto dispaly-Image
 	if(window.location.href.includes('gallery')){
-		let intervalId = window.setInterval(nextImage, 3000)
-	
-
-		// Counter
-		let counter = 0
-		next.addEventListener('click', nextImage)
-		function nextImage(){	
+		let intervalId = window.setInterval(()=>{	
 			images[counter].style.display = 'none'
 			counter++
 			if(counter > images.length-1){
 				counter = 0
 			}
 			images[counter].style.display = 'block'
-		}
+		}, 3000)
+	
+
+		// Counter
+		let counter = 0
+		next.addEventListener('click', ()=>{
+			window.clearInterval(intervalId)
+			images[counter].style.display = 'none'
+			counter++
+			if(counter > images.length-1){
+				counter = 0
+			}
+			images[counter].style.display = 'block'
+		})
 
 		prev.addEventListener('click', ()=>{
+			window.clearInterval(intervalId)
 			images[counter].style.display = 'none'
 			counter--
 			if(counter < 0){
