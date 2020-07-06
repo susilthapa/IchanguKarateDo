@@ -22,7 +22,19 @@ window.onload =
 				})
 
 
-	
+		/*=====
+			Burger Navigation
+	})
+		========*/	
+		const burger = document.getElementsByClassName('burger')
+		const main_nav = document.getElementsByClassName('main-nav')
+
+		burger[0].addEventListener('click', ()=>{
+			main_nav[0].classList.toggle('open')
+
+		})
+		
+
 
 
 
@@ -40,7 +52,7 @@ window.onload =
 	const next = document.querySelector('#next')
 
 	// Auto dispaly-Image
-	if(window.location.href.includes('gallery')){
+	if(window.location.href.includes('players')){
 		let intervalId = window.setInterval(()=>{	
 			images[counter].style.display = 'none'
 			counter++

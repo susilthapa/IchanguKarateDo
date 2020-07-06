@@ -29,7 +29,7 @@ p{
 	padding: 5px 0;
 	background-color: #222222;
 	border-radius: 0 8px 8px 0;
-	margin-top: 40px;	
+	margin-top: 20px;	
 }
 
 .timeline-body::after{
@@ -45,8 +45,10 @@ p{
 
 .timeline-item{
 	position: relative;
+	cursor: pointer;
 
 }
+
 
 .timeline-item::after{
 	content: '';
@@ -76,9 +78,28 @@ p{
 	margin: 40px;
 	padding-bottom: 40px;
 	border-bottom: 1px solid #333;
+	overflow: hidden;
 }
 
-.content p{
+.content .title{
+	text-align: center;
+
+}
+.content .summary{
+	display: flex;
+	align-items: end;
+	height: 200px;
+}
+
+.content .summary img{
+	max-width: 45%;
+	padding-top: 8px;
+	max-height: 100%;
+}
+
+.content .summary p{
+	width: 55%;
+	margin-left: 15px;
 	margin-top: 8px;
 }
 
@@ -99,7 +120,20 @@ p{
 	.timeline-item .time{
 		left: -34%;
 	}
-
+	.content{
+		margin: 10px;
+	}
+	.content .summary{
+		flex-direction: column;
+		height: auto;
+		align-items: center;
+	}
+	.content .summary img{
+		max-width: 80%;
+	}
+	.content .summary p{
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 768px){
@@ -110,7 +144,7 @@ p{
 		padding: 14px 25px 14px 40px;
 	}
 	.content{
-		margin: 25px;
+		/*margin: 25px;*/
 		padding-bottom: 30px;
 	}
 
@@ -136,6 +170,10 @@ p{
 		margin: 10px 20px -10px 20px;
 		text-align: center;
 	}
+
+	.content .title{
+		margin-top: 25px;
+	}
 }
 
 @media screen and (max-width: 500px){
@@ -144,6 +182,9 @@ p{
 	}
 	.timeline-body{
 		width: 100%;
+	}
+	.content .summary img{
+		max-width: 100%;
 	}	
 }
 

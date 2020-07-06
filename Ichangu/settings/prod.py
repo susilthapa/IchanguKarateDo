@@ -18,7 +18,7 @@ DATABASES = {
 	'default': dj_database_url.config()
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 SECURE_BROWSER_XSS_FILTER = True

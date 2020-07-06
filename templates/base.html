@@ -32,7 +32,13 @@
 					<li><a href="{% url 'home' %}#about" class="scroll">ABOUT</a></li>
 					<li><a href="{% url 'committe' %}">COMMITTEE</a></li>
 					<li><a href="{% url 'events' %}">EVENTS</a></li>
-					<li><a href="{% url 'gallery' %}" class="">GALLERY</a></li>
+					<li id="dropdown">
+						<a href="#" class="">GALLERY</a>
+						<div class="dropdown-links">
+							<a href="{% url 'players' %}">PLAYERS</a>
+							<a href="{% url 'videos' %}">VIDEOS</a>
+						</div>
+					</li>
 					<li><a href="{% url 'contact' %}">CONTACT</a></li>
 				</ul>
 			</nav>
@@ -47,7 +53,7 @@
 	{% block content %}{% endblock %}
 
 	<footer>
-		<span style="color:lightgray;">&copy;2020 Copyright:&nbsp</span> IchanguNarayanKarateDo.com
+		<span style="color:lightgray;">&copy;2020 Copyright:&nbsp</span> IchanguKarateDo.com
 	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>

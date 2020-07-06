@@ -1,0 +1,114 @@
+body{
+	 background-image:none;
+	 height: auto;
+}
+
+.main{
+	margin-top: 100px;
+	padding: 20px;
+}
+
+.video-container{
+	display: flex;
+	/*flex-direction: column;*/
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.video-container .video{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 47%;
+	margin: 15px 0;
+	height: 450px;
+	padding: 10px;
+	color: black;
+	background-color: #222222;
+	border-radius: 10px;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/*.post .media{
+	width: 80%;
+	margin: auto;
+	height: 350px;
+	overflow: hidden;
+}*/
+
+.media{
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+.media iframe{
+ 	max-width: 100% !important;
+ 	max-height: 100% !important;
+ 	border: 3px solid black;
+}
+
+.video .description{
+	padding: 5px;
+	/*max-height: 50px;*/
+	margin-top: 5px;
+	min-height: 20px;
+	max-height: 80px;
+	width: 100%;
+	/*overflow-x: hidden;*/
+	overflow: hidden;
+	text-align: center;
+}
+
+.video .description p{
+	color: white;
+	font-size: 17px;
+}
+
+/* width */
+/*.video .description::-webkit-scrollbar {
+  width: 10px;
+}*/
+
+/* Track */
+/*.video .description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}*/
+ 
+/* Handle */
+/*.video .description::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+*/
+/* Handle on hover */
+/*.video .description::-webkit-scrollbar-thumb:hover {
+  background: darkgrey; 
+}*/
+
+
+@media screen and (max-width: 768px){
+	.main{
+		padding: 15px;
+	}
+	.video-container{
+		flex-direction: column;
+	}
+
+	.video-container .video{
+		width: 100%;
+		height: auto;
+		padding: 5px;
+	}
+
+	.video-container .media{
+		height: 350px;
+		display: flex;
+		justify-content: center;
+	}
+	.video-container .description {
+		max-height: 100px;
+	}
+}	

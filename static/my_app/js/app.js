@@ -4,9 +4,9 @@ $(document).ready(function(){
 		Burger Nav
 	=======*/
 
-	$('.burger').on('click', function(){
-		$('.main-nav').toggleClass('open')
-	})
+	// $('.burger').on('click', function(){
+	// 	$('.main-nav').toggleClass('open')
+	// })
 
 
 	/* ======
@@ -19,9 +19,22 @@ $(document).ready(function(){
 	  		$(".main-nav li").removeClass("active");
 		   	$(this).closest('li').addClass('active')
 		   	$(this).closest('li a').css('color', 'black')
-		   
+		   	
+		   	if(path.includes('gallery')){
+		   		$('#dropdown').addClass('active')
+		   	}
+		   	}
+		})
+
+
+	$('.dropdown-links a').each(function(){
+   		var path = window.location.href;
+	  	if (this.href === path) {
+			$(this).css('color', 'red')
 		}
+	
 	})
+
 
 	$('.scroll').on('click', function(){		
 		$(".main-nav li").removeClass("active");
