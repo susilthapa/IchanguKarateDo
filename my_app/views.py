@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DeleteView
+
+from .models import Events
 
 
 class HomePageView(TemplateView):
@@ -20,3 +22,6 @@ class CommitteePageView(TemplateView):
 class EventsPageView(TemplateView):
 	template_name = 'events.html'
 
+class EventsDetailPageView(DeleteView):
+	model = Events
+	template_name = 'events_detail.html'

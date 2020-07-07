@@ -22,7 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'my_app'
+    
+    'my_app',
+
+    #Third party
+    'ckeditor',
+    'embed_video',
 ]
 
 # SITE_ID = 1
@@ -117,3 +122,12 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# CkEditor
+
+CKEDITOR_CONFIGS ={
+    'default': {
+    'toolbar': None
+    }
+}
