@@ -12,19 +12,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('phone_one', models.CharField(blank=True, max_length=17, verbose_name='Phone Number 1')),
-                ('phone_two', models.CharField(blank=True, max_length=17, verbose_name='Phone Number 2')),
-                ('email', models.EmailField(max_length=70, verbose_name='Email Address')),
-            ],
-            options={
-                'verbose_name_plural': 'Contact',
-            },
-        ),
-        migrations.CreateModel(
             name='Videos',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),

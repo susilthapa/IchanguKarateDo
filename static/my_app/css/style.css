@@ -17,6 +17,10 @@ a{
 	color: white;
 }
 
+p{
+	margin-top: 5px;
+}
+
 li{
 	list-style: none;
 
@@ -30,10 +34,10 @@ body{
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
     height: 100vh;
-    background-image: url("../images/main.jpg");
-    background-repeat: no-repeat;
+    /*background-image: url("../images/main2.jpg");*/
+/*    background-repeat: no-repeat;
     background-position:center;
-	background-size: cover;
+	background-size: cover;*/
 	background-color:#0d0d0d;
 	/*animation-name: zoom;
 	-webkit-animation-name: zoom;*/
@@ -69,7 +73,7 @@ header {
 .logo-container {
 	/*background-color: blue;*/
 	flex: 1;
-	padding-left: 20px;
+	padding-left: 10px;
 }
 
 .logo-container h3{
@@ -182,20 +186,27 @@ nav{
 	/*display: block;*/
 }
 
+.ddd-container{
+	height: 100vh;
+	overflow: hidden;
+}
+
 .ddd{
 	position: relative;
 	width: 100%;
 	display:flex;
 	justify-content: center;
-	height:100vh;
+	height:100%;
 	align-items: flex-end;
 	font-style: italic;
-    /*animation: dim;*/
+	background-repeat: no-repeat;
+    background-position: top 15px center;
+	background-size: cover;
 }
 
 .ddd .d1{
 	position: absolute;
-	top: 130px;
+	top: 50%;
 	display: flex;
 	align-items: center;
 	width: 90%;
@@ -213,25 +224,32 @@ nav{
 }*/
 
 .ddd .d1 img{
-	height: 60px;
+	height: 65px;
+	margin-top: 10px;
 }
 
 .ddd .d1 p{
-	color: #53b356;
+	color: yellow;
 }
 
 .ddd .d1 h1{
-	color: lightgrey;
+	background-color: black;
+	opacity: 0.8;
+	color: #53b356;
 	margin: 0 7px;
 	font-size: 27px;
 }
 
 .ddd .d2 {
+	z-index: 1;
 	display: flex;
+	position: absolute;
+	bottom: 5;
+	background-color: black;
+	opacity: 0.6;
 }
 
 .ddd h2{
-	color: #149414;
 }
 
 .ddd h2:nth-child(1){
@@ -246,8 +264,8 @@ nav{
     animation: grow 3s;
 }
 .ddd h2{
+	color: yellow;
 	margin-left: 10px;
-	padding-bottom: 5%;
 	/*font-family: Times New Roman;*/
 }
 /*
@@ -261,8 +279,8 @@ main{
     /*border:1px solid red;*/
     padding: 20px;
     width:100%;
-
 }
+
 
 .about{
 	display: flex;
@@ -274,9 +292,10 @@ main{
 }
 
 hr{
-	color: #fff;
+	/*color: #333;*/
+	border: 1px solid #333;
 	width: 100%;
-	margin-bottom: 5px;
+	/*margin-bottom: 5px;*/
 }
 
 .about .abt1{
@@ -329,7 +348,7 @@ footer{
     bottom: 0;
     z-index: -1;
     margin-top: 30px;
-    border-top: 1px solid gray;
+    border-top: 1px solid #333;
 
 }
 
@@ -367,6 +386,48 @@ footer{
 }
 
 
+
+@media screen and (min-width: 1400px){
+
+	body{
+		font-size: 30px;
+	}
+
+	h3, h1{
+		font-size: 35px !important;
+	}
+
+}
+
+@media screen and (min-width: 1900px) {
+
+	body{
+		font-size: 40px;
+	}
+
+	h3, h1{
+		font-size: 45px !important;
+	}
+	p{
+		font-size: 30px !important;
+	}
+
+	h4{
+		font-size: 26px !important;
+	}
+
+	footer{
+		height: 150px;
+	}
+}
+
+@media screen and (max-width:1168px){
+	.ddd{
+		background-position: top 40px center;
+	}
+}
+
+
 @media screen and (max-width:1068px){
 	body{
 		font-size: 15px;
@@ -397,6 +458,10 @@ footer{
 	}
 	.logo{
 		height: 70px;
+	}
+
+	.ddd{
+		background-position: top 50px center;
 	}
 
 	.about{
@@ -445,7 +510,7 @@ footer{
 	}
 	
 	.main-nav li a{
-		font-size: 15px;
+		font-size: 17px;
 	}
 	.main-nav{
 		position: fixed;
@@ -481,13 +546,17 @@ footer{
 	}
 
 	.ddd .d1 img{
-		height: 40px;
+		height: 45px;
 	}
 	.ddd {
 		font-size: 12px;
 	}
 	.ddd .d1 h1{
 		font-size: 17px;
+	}
+
+	.ddd .d1 p{
+		font-size: 13px;
 	}
 
 	.d2 h2{
@@ -522,21 +591,27 @@ footer{
 }
 
 @media screen and (max-width: 315px) {
-	footer{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
 
 	.ddd h2{
   		font-size: 12px;
-  }
+  	}
 
-  .logo{
-  	height: 60px;
-  }
+	.logo{
+  	    height: 60px;
+    }
 
+	footer{
+		text-align: center;
+	}
+
+}
+
+
+@media screen and (max-height: 55px){
+	.ddd{
+		background-position: top 70px center;
+
+	}
 }
 
 

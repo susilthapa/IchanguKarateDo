@@ -19,62 +19,27 @@
 
 		<div class="founder">
 			<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+				<div class="card-img">
+					<img src="{{ president.image.url }}" alt="">
+				</div>
 			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
+			 	<h3 class="name">{{ president.name }}</h3>
+			 	<p class="position">{{ president.position }}</p>
 			</div>
 		</div>
 
 		</div>
+		{% for member in members%}
 		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
+			<div class="card-img">
+				<img src="{{ member.image.url }}" alt="">
+			</div>
 			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
+			 	<h3 class="name">{{ member.name }}</h3>
+			 	<p class="position">{{member.position}}</p>
 			</div>
 		</div>
-
-		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
-			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
-			</div>
-		</div>
-
-		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
-			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
-			</div>
-		</div>
-
-
-		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
-			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
-			</div>
-		</div>
-
-		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
-			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
-			</div>
-		</div>
-
-		<div class="card">
-			<img src="{% static 'my_app/images/player.jpg' %}" alt="">
-			<div class="info">
-		 	<h3 class="name">Name LastName</h3>
-		 	<p class="position">President</p>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}

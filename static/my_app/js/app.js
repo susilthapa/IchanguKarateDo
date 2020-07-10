@@ -15,7 +15,7 @@ $(document).ready(function(){
 	
 	$('.main-nav a').each(function() {
    		var path = window.location.href;
-	  if (this.href === path) {
+	  	if (this.href === path) {
 	  		$(".main-nav li").removeClass("active");
 		   	$(this).closest('li').addClass('active')
 		   	$(this).closest('li a').css('color', 'black')
@@ -23,6 +23,10 @@ $(document).ready(function(){
 		   	if(path.includes('gallery')){
 		   		$('#dropdown').addClass('active')
 		   	}
+		   	}
+		if(path.includes('events')){
+	   		$(".main-nav li").removeClass("active");
+	   		$('#event').addClass('active')
 		   	}
 		})
 

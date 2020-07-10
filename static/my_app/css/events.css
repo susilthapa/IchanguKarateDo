@@ -8,6 +8,7 @@ body{
 .main{
 	margin-top: 100px;
 	padding: 14px 40px;
+	min-height: 90vh;
 }
 
 p{
@@ -68,7 +69,7 @@ p{
 	padding: 10px 5px;
 	border-radius: 5px;
 	position: absolute;
-	left: -20%;
+	left: -15%;
 	top: 4px;
 	font-size: 15px;
 }
@@ -103,10 +104,21 @@ p{
 	margin-top: 8px;
 }
 
+
+
+@media  screen and (min-width:1241px){
+	.content .summary p{
+		width: 75%;
+	}
+
+
+}
+
 @media screen and (max-width: 1240px){
 	.timeline-item .time{
-		left: -25%; 
+		left: -21%; 
 	}
+
 }
 
 @media screen and (max-width: 1010px){
@@ -118,7 +130,7 @@ p{
 		width: 75%;
 	}
 	.timeline-item .time{
-		left: -34%;
+		left: -26%;
 	}
 	.content{
 		margin: 10px;
@@ -149,7 +161,7 @@ p{
 	}
 
 	.timeline-item .time{
-		left: -45%;
+		left: -34%;
 	}
 }
 

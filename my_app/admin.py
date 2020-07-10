@@ -8,8 +8,9 @@ from .models import (
 	EventDetails,
 	Events, 
 	Players,
+	ImageSlider,
 	Videos,
-	Contact
+	Contact,
 	)
 
 admin.site.unregister(Group)
@@ -32,13 +33,19 @@ class EventsAdmin(admin.ModelAdmin):
 	]
 
 	list_display = ('title', 'date')
+	date_hierarchy = 'date'
 admin.site.register(Events, EventsAdmin)
 
 
 class PlayersAdmin(admin.ModelAdmin):
-	list_display = ('name', 'player_type')
+	list_display = ('player_type', 'name', 'image')
 	search_fields = ('name', 'player_type')
+	list_filter = ('player_type',)
+	date_hierarchy = 'date'
+
+
 admin.site.register(Players, PlayersAdmin)
+admin.site.register(ImageSlider)
 
 
 admin.site.register(Videos)

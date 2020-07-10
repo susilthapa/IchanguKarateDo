@@ -12,8 +12,13 @@ body{
 	/*width: 75%;*/
 	margin: auto;
 	margin-top:100px;
+	min-height: 90vh;
 }
 
+/*.main hr{
+	width: 85%;
+	margin: auto;
+}*/
 .contact{
 	margin-top: 11%;
 }
@@ -52,6 +57,11 @@ textarea{
 	/*resize:none;*/
 }
 
+.inputs:focus {
+    outline: none !important;
+    border:1px solid #53b356;
+}
+
 #btn{
 	background-color: #212121; 
 	cursor: pointer;
@@ -72,7 +82,7 @@ textarea{
 	align-items: center;
 	word-spacing: 5px;
 	letter-spacing: 3px;
-	border: 1px solid;
+	border: 1px solid #333;
 	animation: address 1s linear;
 	margin: 18px 0;
 }
@@ -90,6 +100,8 @@ textarea{
 	display: flex;
 	width: 65%;
 	justify-content: space-evenly;
+	border-top: 1px solid #333;
+	padding-top: 5px;
 }
 
 #fb{
@@ -146,6 +158,21 @@ textarea{
 @keyframes address {
 	from{
 		transform: translateX(200px);
+	}
+}
+
+
+
+
+@media screen and (min-width: 1400px){
+	.inputs {
+	    margin: 20px 0;
+	    padding: 30px 20px;
+	}
+
+	.map{
+		width: 85%;
+		height: 700px;
 	}
 }
 

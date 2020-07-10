@@ -17,6 +17,14 @@ PLAYERS_CATEGORY = (
 	('player', 'Player')
 	)
 
+COMMITTEE_POSITION = (
+	('A', 'President'),
+	('B', 'Vice President'),
+	('C', 'Treasurer'),
+	('D', 'Secretary'),
+	('E', 'Member'),
+	)
+
 
 def image_file_path(instance, filename):
   """Generate filepath for new image"""
@@ -35,9 +43,14 @@ def image_file_path(instance, filename):
   elif(instance._meta.model.__name__ == 'Players'):
   	return os.path.join('players/', filename)
 
+  elif(instance._meta.model.__name__ == 'ImageSlider'):
+  	return os.path.join('imageSlider/', filename)
+
+
 
 class Home(models.Model):
 	title = models.CharField(max_length=100, blank=True)
+	logo = models.ImageField(upload_to=image_file_path, null=True, blank=True, )
 	bg_image = models.ImageField('Background Image', upload_to=image_file_path, blank=True)
 	about = models.TextField(blank=True)
 	about_image = models.ImageField('About Image', upload_to=image_file_path, blank=True)
@@ -60,6 +73,7 @@ class Committee(models.Model):
 
 	class Meta:
 		verbose_name_plural = 'Committee'
+		ordering = ['-position']
 	def __str__(self):
 		return self.name
 
@@ -100,7 +114,7 @@ class EventDetails(models.Model):
 
 
 class Players(models.Model):
-	name = models.CharField(max_length=255)
+	name = models.CharField(max_length=255, blank=True)
 	image = models.ImageField(upload_to=image_file_path)
 	player_type = models.CharField('Player Type',
 					 choices=PLAYERS_CATEGORY,
@@ -111,7 +125,7 @@ class Players(models.Model):
 	
 	class Meta:
 		verbose_name_plural = 'Players'
-		ordering = ['player_type']
+		ordering = ['-date']
 
 	def __str__(self):
 		return self.name
@@ -121,14 +135,23 @@ class Videos(models.Model):
 	link = EmbedVideoField('Video Link')
 	description = models.TextField('Video Description')
 
+	class Meta:
+		verbose_name_plural = 'Videos'
+
 	def __str__(self):
 		return self.description[:15] + '...' 
 
+
 class Contact(models.Model):
 	title = models.CharField(max_length=100)
+	address = models.CharField(max_length=200, blank=True, null=True)
 	phone_one = models.CharField('Phone Number 1', max_length=17, blank=True)
 	phone_two = models.CharField('Phone Number 2', max_length=17, blank=True)
 	email = models.EmailField('Email Address', max_length=70)
+	fb_link = models.URLField('Facebook Link', max_length=200, unique=True, blank=True)
+	insta_link = models.URLField('Instagram Link', max_length=200, unique=True, blank=True)
+	youtube_link = models.URLField('Youtube Link', max_length=200, unique=True, blank=True)
+	
 
 	class Meta:
 		verbose_name_plural = 'Contact'
@@ -140,3 +163,14 @@ class Contact(models.Model):
 		if not self.pk and Contact.objects.exists():
 			raise ValidationError(f'Not allowed to create multiple Contact Information')
 		super(Contact, self).save(*args, **kwargs)
+
+class ImageSlider(models.Model):
+	image_name = models.CharField(max_length=100)
+	image = models.ImageField(upload_to=image_file_path)
+
+	class Meta:
+		verbose_name_plural ='ImageSlider'
+
+	def __str__(self):
+		return self.image_name
+

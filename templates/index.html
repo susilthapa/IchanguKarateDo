@@ -3,50 +3,57 @@
 
 {% block title %}Home{% endblock %}
 
+
 {% block content %}
 
 <!--    <div style="height:80vh; border:1px solid red;"></div>-->
-    <div class="ddd">
-    	<div class="d1">
-    		<img src="{% static 'my_app/images/logo.jpg' %}" alt="">
-    		<div class="d1-text">
-    			<p>Sports for Health, Sports for Nation</p>
-    			<h1>Affiliated to Nepal Sports Council</h1>
-    		</div>
-    		<img src="{% static 'my_app/images/nepal.png' %}" alt="">
-        </div>
+	<div class="ddd-container">    
+	    <div class="ddd" id="ddd">
+	    	<div class="d1">
+	    		<img src="{{home.logo.url}}" alt="">
+	    		<div class="d1-text">
+	    			<p>Sports for Health, Sports for Nation</p>
+	    			<h1>Affiliated to Nepal Sports Council</h1>
+	    		</div>
+	    		<img src="{% static 'my_app/images/nepal.png' %}" alt="">
+	        </div>
 
-        <div class="d2">
-        	<h2 class="d">Discipline,</h2>
-        	<h2 class="d">Development,</h2>
-        	<h2 class="d">and Dynamism</h2>
-        </div>
-    </div>
+	        <div class="d2">
+	        	<h2 class="d">Discipline,</h2>
+	        	<h2 class="d">Development,</h2>
+	        	<h2 class="d">and Dynamism</h2>
+	        </div>
+	    </div>
+	</div>    
 
-	<main>
+	<main id='about-container'>
 		<div class="about" id='about'>
 			<div class="abt1">
 				<h1>About</h1>
 				<hr>
 				<div id="description">
-					<p class="des-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					 proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+					<p class="des-p"> {{ home.about }}</p>
 				</div>
 			</div>
 			<div class="abt2">
-				<img src='{% static "my_app/images/transparent2.png" url %}' alt="">
+				<img src='{{ home.about_image.url }}' alt="">
 			</div>
 		</div>
 	</main>
 
+{% endblock %}
+
+{% block script %}
+	<script>
+		document.getElementById('ddd').style.backgroundImage = 'url("{{home.bg_image.url}}")'
+		gsap.from('.abt1', {scrollTrigger:{trigger: '.abt1',toggleActions: "restart pause resume"},
+			 x:-500,
+			 duration: 1.5
+			})
+
+		gsap.from('.abt2', {scrollTrigger:{trigger: '.abt2', toggleActions: "restart pause resume"},
+			 x:500,
+			 duration: 1.5
+			})
+	</script>
 {% endblock %}

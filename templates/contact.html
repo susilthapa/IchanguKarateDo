@@ -29,22 +29,30 @@
 			<div class="address">
 				
 					<div class="div1">
-						<h3>Ichangu Karate-Do</h3>
-						<p style="text-align:center">Nagarjun, Balaju</p>
+						<h3>{{contact.title}}</h3>
+						<p style="text-align:center">{{contact.title}}</p>
 					<!-- </div>
 					<div> -->
-						<p class="pm">9818380761</p>
-						<p class="pm">srjthapa53@gmail.com</p>
-						<hr>
+						<p class="pm">{{contact.phone_one}}</p>
+						<p class="pm">{{contact.phone_two}}</p>
+						<p class="pm">{{contact.email}}</p>
+						<!-- <hr> -->
 					</div>
 
 				
 				<div class="social-app">
-					<a id="fb" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-					<a id="insta" href="#"><i class="fab fa-instagram fa-2x"></i></a>
-					<a id="youtube" href="#"><i class="fab fa-youtube fa-2x"></i></a>
+					<a id="fb" {% if contact.fb_link != '' %} href="{{contact.fb_link}}" target="_blank" {% endif %}
+>
+						<i class="fab fa-facebook-square fa-2x"></i>
+					</a>
+					
+					<a id="insta" {% if contact.insta_link != '' %} href="{{contact.insta_link}}" target="_blank" {% endif %}>
+						<i class="fab fa-instagram fa-2x"></i>
+					</a>
+					<a id="youtube" {% if contact.youtube_link != '' %}  href="{{contact.youtube_link}}" target="_blank" {% endif %}>
+						<i class="fab fa-youtube fa-2x"></i>
+					</a>
 				</div>
-
 			</div>
 		</div>
 

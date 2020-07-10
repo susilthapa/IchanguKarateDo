@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% load embed_video_tags %}
+<!-- {% load embed_video_tags %} -->
 
 {% load static %}
+{% load embed_video_tags %}
 
 {% block extra_css %}
 	
@@ -27,74 +28,33 @@
 	
 	<div class="main">
 		<div class="video-container">
-			<div class="video">
-				<div class="media">
-					<!-- <iframe width="853" height="480" src="https://www.youtube.com/embed/uZZJwtmY58Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/sTdIJCGY6fw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<div class="description">
-					<p>
-						Title goes here!
-					</p>
-					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute iru.</p> -->
-				</div>
-			</div>
+			{% for vid in videos %}
+				<div class="video">
+					<div class="media">
+						{% video vid.link as my_video %}
+							{% video my_video 'medium' %}
+						{% endvideo %}
 
-			<div class="video">
-				<div class="media">
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/sTdIJCGY6fw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="description">
+						<p>
+							{{ vid.description }}
+						</p>
+					</div>
 				</div>
-				<div class="description">
-					<p>
-						Title goes here!
-					</p>
-				<!-- 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim susilthapa veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					</p> -->
-				</div>
-			</div>
 
-			<div class="video">
-				<div class="media">
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/mkukUcMq8hk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<div class="description">
-					<p>
-						Title goes here!
-					</p>
-			
-				</div>
-			</div>
-
-			<div class="video">
-				<div class="media">
-					<iframe width="640" height="480" src="https://www.youtube.com/embed/mkukUcMq8hk?Rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<div class="description">
-					<p>
-						Title goes here!
-					</p>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 
 {% endblock %}
 
 {% block script %}
-<!-- 	<script>
+	<script>
 		let ifr = document.getElementsByTagName('iframe')
 	    for(let i=0; i<ifr.length; i++){
-	      ifr[i].src+='?rel=0'
-	      console.log(ifr[i].src)
+	      ifr[i].src+='&rel=0'
 
 	    } 
-	 </script>   --> 
+	 </script>   
 {% endblock script %}

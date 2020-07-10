@@ -16,6 +16,6 @@ urlpatterns = [
 	path('gallery/videos/', VideosPageView.as_view(), name='videos'),
 	path('committe/', CommitteePageView.as_view(), name='committe'),
 	path('events/', EventsPageView.as_view(), name='events'),
-	path('events/<slug>/', EventsDetailPageView.as_view(), name='events'),
+	path('events/<slug>/', EventsDetailPageView.as_view(), name='events-detail'),
 
 ]
