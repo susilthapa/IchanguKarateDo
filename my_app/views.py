@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Q
+from django.contrib import messages
+from django.conf import settings
+
+from django.core.mail import send_mail
 
 from django.views.generic import (
 	View,
@@ -57,6 +61,12 @@ class EventsDetailPageView(DetailView):
 	model = Events
 	template_name = 'events_detail.html'
 	slug_field = 'slug'
+	context_object_name = 'event'
+
+	def get_context_data(self, *args, **kwargs):
+		context = super(EventsDetailPageView, self).get_context_data(*args, **kwargs)
+		context['details'] = self.object.event_details.all()
+		return context
 
 
 class PlayersPageView(TemplateView):
@@ -68,7 +78,6 @@ class PlayersPageView(TemplateView):
 		context['medalists'] = Players.objects.filter(player_type='medalist')
 		context['black_belts'] = Players.objects.filter(player_type='black_belt')
 		context['players'] = Players.objects.filter(player_type='player')
-
 		return context
 
 
@@ -85,7 +94,27 @@ class ContactPagView(TemplateView):
 		context = super(ContactPagView, self).get_context_data(*args, *kwargs)
 		context['contact'] = Contact.objects.first()
 		return context
-	
+
+	def post(self, *args, **kwargs):
+		name = self.request.POST.get('name')
+		email = self.request.POST.get('email')	
+		message = self.request.POST.get('message')	
+
+		
+		
+		
+
+		
+		
+		send_mail(subject='From Ichangu Karate-Do',
+					message = f"{name}: {message} via {email}",
+					from_email = settings.EMAIL_HOST_USER,
+					recipient_list=['srjthapa53@gmail.com'],
+					fail_silently=False
+					)
+
+		messages.success(self.request, 'Email has been sent , thank you.')
+		return redirect('contact')	
 
 
 

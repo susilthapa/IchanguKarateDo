@@ -15,13 +15,14 @@
 		<hr>
 		<div class="info">
 			<div class="form-div">
-				 <form action="/action_page.php">
+				 <form action="" method="post">
+				 	{% csrf_token %}
 				    <!-- <label for="fname">Name</label> -->
-				    <input class="inputs" type="text" id="name" name="name" placeholder="Your name..">
+				    <input class="inputs" type="text" id="name" name="name" placeholder="Enter full name.." required="">
 
 				    <!-- <label for="lname">Email</label> -->
-				    <input type="text" class="inputs"  id="email" name="email" placeholder="Email..">
-				  	<textarea name="message" class="inputs"  rows="8" cols="50" placeholder="Message"></textarea>
+				    <input type="text" class="inputs"  id="email" name="email" placeholder="Email.." required="">
+				  	<textarea name="message" class="inputs"  rows="8" cols="50" placeholder="Message" required=""></textarea>
 				    <button class="inputs" id="btn" type="submit">Send</button>
 				</form>
 			</div>
@@ -30,9 +31,6 @@
 				
 					<div class="div1">
 						<h3>{{contact.title}}</h3>
-						<p style="text-align:center">{{contact.title}}</p>
-					<!-- </div>
-					<div> -->
 						<p class="pm">{{contact.phone_one}}</p>
 						<p class="pm">{{contact.phone_two}}</p>
 						<p class="pm">{{contact.email}}</p>

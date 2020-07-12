@@ -17,7 +17,7 @@
 		<i class="fas fa-arrow-right" id="next"></i>
 		<div class="preview">
 			{% for img in images %}
-				<img src="{{img.image.url}}">
+				<img src="{{img.image.url}}" alt="{{base.title}}">
 			{% endfor %}
 
 		</div>
@@ -35,10 +35,10 @@
 			{% for medalist in medalists %}
 				<div class="medal-card">
 				  <div class="medal-img">
-				  	<img src="{{medalist.image.url}}">
+				  	<img src="{{medalist.image.url}}" alt="{{medalist.name}}">
 				  </div>
 				  <div class="container">
-				    <h4><b>{{medalist.name}}</b></h4> 
+				    <h4><b>{{medalist.name}} {% if medalist.date %}({{medalist.date.year}}) {% endif %} </b></h4> 
 				    <p>{{medalist.description | safe}}</p> 
 				  </div>
 				</div>
@@ -50,7 +50,7 @@
 			{% for b in black_belts %}
 				<div class="card">
 				  <div class="card-image">
-				  	<img src="{{b.image.url}}">
+				  	<img src="{{b.image.url}}" alt="{{base.title}}">
 				  </div>	
 				  <div class="container">
 				    <h4><b>{{b.name}} ({{b.date.year}})</b></h4> 
@@ -64,7 +64,7 @@
 		<div class="all" id="three-three">
 			{% for player in players %}
 				<div class="all-images">
-					<img src="{{player.image.url}}" alt="">
+					<img src="{{player.image.url}}" alt="{{base.title}}">
 				</div>
 			{% endfor %}
 		

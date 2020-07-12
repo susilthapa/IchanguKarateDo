@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 import os
+import PIL
+from PIL import Image
 
 from django.shortcuts import reverse
 from django.template.defaultfilters import slugify
@@ -17,14 +19,20 @@ PLAYERS_CATEGORY = (
 	('player', 'Player')
 	)
 
-COMMITTEE_POSITION = (
-	('A', 'President'),
-	('B', 'Vice President'),
-	('C', 'Treasurer'),
-	('D', 'Secretary'),
-	('E', 'Member'),
-	)
+# COMMITTEE_POSITION = (
+# 	('A', 'President'),
+# 	('B', 'Vice President'),
+# 	('C', 'Treasurer'),
+# 	('D', 'Secretary'),
+# 	('E', 'Member'),
+# 	)
 
+
+def image_resize(image):
+	img = Image.open(image.path)
+	width, height = (img.size)
+	img = img.resize((width, height),PIL.Image.ANTIALIAS)
+	return img
 
 def image_file_path(instance, filename):
   """Generate filepath for new image"""
@@ -62,9 +70,12 @@ class Home(models.Model):
 		return self.title
 
 	def save(self, *args, **kwargs):
+		super(Home, self).save(*args, **kwargs)
 		if not self.pk and Home.objects.exists():
 			raise ValidationError(f'Not allowed to create multiple Home Information')
-		super(Home, self).save(*args, **kwargs)
+
+		img = image_resize(self.bg_image)
+		img.save(self.bg_image.path)
 
 class Committee(models.Model):
 	name = models.CharField(max_length=50)
@@ -76,6 +87,11 @@ class Committee(models.Model):
 		ordering = ['-position']
 	def __str__(self):
 		return self.name
+
+	def save(self, *args, **kwargs):
+		super(Committee, self).save(*args, *kwargs)
+		img = image_resize(self.image)
+		img.save(self.image.path)
 
 
 class Events(models.Model):
@@ -97,6 +113,11 @@ class Events(models.Model):
 		self.slug = slugify(self.title)
 		super(Events, self).save(*args, **kwargs)
 
+	def save(self, *args, **kwargs):
+		super(Events, self).save(*args, *kwargs)
+		img = image_resize(self.image)
+		img.save(self.image.path)
+
 	def get_absolute_url(self):
 		return reverse("events", kwargs={'slug': self.slug})
 
@@ -110,6 +131,11 @@ class EventDetails(models.Model):
 
 	def __str__(self):
 		return self.description[:15] + '...'
+
+	def save(self, *args, **kwargs):
+		super(EventDetails, self).save(*args, *kwargs)
+		img = image_resize(self.image)
+		img.save(self.image.path)
 
 
 
@@ -129,6 +155,11 @@ class Players(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	def save(self, *args, **kwargs):
+		super(Players, self).save(*args, *kwargs)
+		img = image_resize(self.image)
+		img.save(self.image.path)
 
 
 class Videos(models.Model):
@@ -173,4 +204,9 @@ class ImageSlider(models.Model):
 
 	def __str__(self):
 		return self.image_name
+
+	def save(self, *args, **kwargs):
+		super(ImageSlider, self).save(*args, *kwargs)
+		img = image_resize(self.image)
+		img.save(self.image.path)
 

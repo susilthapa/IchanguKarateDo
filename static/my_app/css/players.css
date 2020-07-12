@@ -200,12 +200,8 @@ ol li::before {
 	height: 300px;
     width: 100%;
     margin-top: 15px;
-    /*margin-left: 0;*/
     margin-bottom: 5px;
-	/*height: 95%;
-	width: 55%;*/
-    /*margin-left: 10px;*/
-    /*flex: 2;*/
+    color: lightgray;
     overflow: scroll;
     overflow-x: hidden;
     word-wrap: break-word;

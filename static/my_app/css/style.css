@@ -19,6 +19,7 @@ a{
 
 p{
 	margin-top: 5px;
+	color: lightgray;
 }
 
 li{
@@ -34,13 +35,7 @@ body{
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
     height: 100vh;
-    /*background-image: url("../images/main2.jpg");*/
-/*    background-repeat: no-repeat;
-    background-position:center;
-	background-size: cover;*/
 	background-color:#0d0d0d;
-	/*animation-name: zoom;
-	-webkit-animation-name: zoom;*/
 }
 
 
@@ -49,14 +44,11 @@ body{
 header {
 	position: fixed;
 	top: 0;
-	/*border: 1px solid blue;*/
 	display: flex;
 	background-color:#0d0d0d;
 	z-index:99;
 	width: 100%;
 	height: 100px;
-	/*padding-top: 10px;*/
-	/*margin: auto;*/
 	align-items: center;
 	animation: heads 2.5s ease forwards;
 
@@ -71,12 +63,11 @@ header {
 }
 
 .logo-container {
-	/*background-color: blue;*/
 	flex: 1;
 	padding-left: 10px;
 }
 
-.logo-container h3{
+.logo-container h1{
 	font-size: 25px;
 	text-transform: uppercase;
 }
@@ -90,9 +81,7 @@ header {
 }
 
 nav{
-	/*background-color: red;*/
 	flex: 2;
-	/*margin-left: auto;*/
 	
 }
 
@@ -102,10 +91,6 @@ nav{
 
 .main-nav li{
 	position: relative;
-	/*transition-property: border-bottom;
-	transition-duration: 1s;
-	border: 3px solid blue;*/
-	/*transition-timing-function: ease;*/
 }
 
 .main-nav li{
@@ -177,11 +162,6 @@ nav{
 	color: red;
 }
 
-/*#dropdown ul li{
-	margin-top: 5px;
-	padding: 10px;
-}
-*/
 #dropdown:hover ul{
 	/*display: block;*/
 }
@@ -232,7 +212,7 @@ nav{
 	color: yellow;
 }
 
-.ddd .d1 h1{
+.ddd .d1 h2{
 	background-color: black;
 	opacity: 0.8;
 	color: #53b356;
@@ -252,18 +232,18 @@ nav{
 .ddd h2{
 }
 
-.ddd h2:nth-child(1){
+.ddd .d2 h2:nth-child(1){
 	animation: grow 1s;
 }
-.ddd h2:nth-child(2){
+.ddd .d2 h2:nth-child(2){
     /*animation-delay:1s;*/
     animation: grow 2s;
 }
 
-.ddd h2:nth-child(3){
+.ddd .d2 h2:nth-child(3){
     animation: grow 3s;
 }
-.ddd h2{
+.ddd .d2 h2{
 	color: yellow;
 	margin-left: 10px;
 	/*font-family: Times New Roman;*/
@@ -308,7 +288,7 @@ hr{
 }
 
 
-.abt1 h1{
+.abt1 h2{
 	color: #149414;
 }
 
@@ -393,7 +373,12 @@ footer{
 		font-size: 30px;
 	}
 
-	h3, h1{
+	h4{
+		font-size: 28px !important;
+	}
+
+
+	h3,h2, h1{
 		font-size: 35px !important;
 	}
 
@@ -405,7 +390,7 @@ footer{
 		font-size: 40px;
 	}
 
-	h3, h1{
+	h3, h2,h1{
 		font-size: 45px !important;
 	}
 	p{
@@ -413,7 +398,7 @@ footer{
 	}
 
 	h4{
-		font-size: 26px !important;
+		font-size: 33px !important;
 	}
 
 	footer{
@@ -438,8 +423,8 @@ footer{
 	nav{
 		flex: 3;
 	}
-	.logo-container h3{
-		/*font-size: 21px;*/
+	.logo-container h1{
+		font-size: 22px;
 	}
 	/*.main-image img{
 		height: 80vh;	}*/
@@ -449,10 +434,6 @@ footer{
 
 
 @media screen and (max-width:831px){
-	.logo-container h3{
-		font-size: 23px;
-	}
-
 	.logo-text{
 		margin-left: 5px;
 	}
@@ -477,7 +458,7 @@ footer{
 		height: 300px;
 	}
 
-	.about .abt1 h1{
+	.about .abt1 h2{
 		font-size: 17px;
 	}
 
@@ -487,7 +468,7 @@ footer{
 	.logo-container{
 		flex: 13;
 	}
-	.logo-container h3{
+	.logo-container h1{
 		font-size: 25px;
 	}
 	.burger .line{
@@ -533,7 +514,7 @@ footer{
 		-webkit-clip-path: circle(1500px at 95% -15%);
 	}
 
-	.ddd .d1 h1{
+	.ddd .d1 h2{
 		font-size: 25px;
 	}
 }
@@ -541,7 +522,7 @@ footer{
 
 
 @media screen and (max-width: 540px){
-	.logo-container h3{
+	.logo-container h1{
 		font-size: 18px;
 	}
 
@@ -551,7 +532,7 @@ footer{
 	.ddd {
 		font-size: 12px;
 	}
-	.ddd .d1 h1{
+	.ddd .d1 h2{
 		font-size: 17px;
 	}
 
@@ -584,7 +565,7 @@ footer{
   	main{
   		padding: 0;
   	}
-  	.logo-container h3{
+  	.logo-container h1{
 		font-size: 15px;
 	}
  

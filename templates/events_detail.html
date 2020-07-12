@@ -4,13 +4,39 @@
 
 {% block extra_css %}
 	
-	<link rel="stylesheet" href="{% static 'my_app/css/events.css' %}">
+	<link rel="stylesheet" href="{% static 'my_app/css/event_detail.css' %}">
 	
 {% endblock %}
 
 {% block content %}
 	<div class="main">
-		<h1>{{object.title}}
+		<div class="event-detail">
+			<div class="event">
+				<h2>{{event.title}} ({{event.date.year}})</h2>
+				<hr>
+				<div class="main-image">
+					<img src="{{event.image.url}}" alt="{{event.title}}">
+				</div>
+				<div class="description">
+					<p>
+						{{event.description}}
+					</p>
+				</div>				
+			</div>
+
+			{% for detail in details %}
+				<div class="event event-children">
+					<div class="main-image">
+						<img src="{{detail.image.url}}" alt="{{event.title}}">
+					</div>
+					<div class="description">
+						<p>
+							{{detail.description}}
+						</p>
+					</div>	
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 {% endblock %}	
