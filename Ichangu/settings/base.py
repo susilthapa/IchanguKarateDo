@@ -10,14 +10,13 @@ BASE_DIR = os.path.dirname(
 
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    # 'django.contrib.sites',
-    # 'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -28,9 +27,10 @@ INSTALLED_APPS = [
     #Third party
     'ckeditor',
     'embed_video',
+    'admin_honeypot'
 ]
 
-# SITE_ID = 1
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,27 @@
+body{
+	 background-image:none;
+	 height: auto;
+}
+
+
+
+.main{
+	margin-top: 100px;
+	min-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.main a{
+	background-color: #53b356;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.main h2{
+	color: #53b356;
+}

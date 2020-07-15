@@ -37,12 +37,19 @@
             background-color: #53b356;
         }
 
+        #site-name img{
+            margin-right: 5px;
+        }
+
 
     </style>
 {% endblock %}
 
 {% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">Ichangu</a></h1>
+<h1 id="site-name">
+    <!-- <a href="{% url 'admin:index' %}">Ichangu</a> -->
+    <a href="{% url 'admin:index' %}"><img src="{{ base.logo.url }}" height="40px" />ICHANGU KARATE -DO</a>
+</h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}

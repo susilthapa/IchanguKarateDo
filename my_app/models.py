@@ -77,6 +77,9 @@ class Home(models.Model):
 		img = image_resize(self.bg_image)
 		img.save(self.bg_image.path)
 
+	# def get_absolute_url(self):
+	# 	return reverse('home')
+
 class Committee(models.Model):
 	name = models.CharField(max_length=50)
 	image = models.ImageField(upload_to=image_file_path)
@@ -119,7 +122,7 @@ class Events(models.Model):
 		img.save(self.image.path)
 
 	def get_absolute_url(self):
-		return reverse("events", kwargs={'slug': self.slug})
+		return reverse("events-detail", args=[self.slug])
 
 class EventDetails(models.Model):
 	event = models.ForeignKey(Events, on_delete=models.CASCADE, related_name='event_details')

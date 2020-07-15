@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+	
+	<link rel="stylesheet" href="{% static 'my_app/css/error_page.css' %}">
+	
+{% endblock %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>Oops!... Something went wrong.</h2>
+		<p>Sorry for the inconvenience, we are working on it.</p>
+	</div>
+
+
+{% endblock %}

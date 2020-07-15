@@ -3,22 +3,15 @@ body{
 	 height: auto;
 }
 
-/*footer{
-	position: absolute;
-}
-*/
+
 
 .main{
-	/*width: 75%;*/
 	margin: auto;
 	margin-top:100px;
 	min-height: 90vh;
 }
 
-/*.main hr{
-	width: 85%;
-	margin: auto;
-}*/
+
 .contact{
 	margin-top: 11%;
 }
@@ -31,7 +24,6 @@ body{
 	margin-top: 2%;
 	display: flex;
 	justify-content: space-evenly;
-	/*margin: auto;*/
 }
 
 .form-div{
@@ -53,9 +45,6 @@ form{
   	border-radius: 4px;
 } 
 
-textarea{
-	/*resize:none;*/
-}
 
 .inputs:focus {
     outline: none !important;
@@ -138,14 +127,6 @@ textarea{
 		transform: scale(0);
 		
 	}
-
-	/*99%{
-		opacity: 0;
-	}*/
-/*
-	100%{
-		opacity: 1;
-	}*/
 }
 
 
@@ -230,18 +211,8 @@ textarea{
 	
 }
 
-/*@media screen and (max-height: 755px){
-
-
-}*/
-
-
-
 
 @media screen and (max-width: 540px){
-	/*.main{
-		width: 
-	}*/
 	.form-div, .address{
 		width: 100%;
 
@@ -266,15 +237,6 @@ textarea{
 
 }
 
-
-
-/*@media screen and (min-height: 668px){
-	footer{
-		position: absolute;
-
-	}
-	
-}*/
 
 @media screen and (min-width: 1024px) and (min-height: 900px){
 	

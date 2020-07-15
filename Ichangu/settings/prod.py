@@ -1,11 +1,12 @@
 from .base import *
+import dj_database_url
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', cast=bool)
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
@@ -24,7 +25,7 @@ DATABASES = {
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 3600 
+SECURE_HSTS_SECONDS = 86400 
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
 SECURE_HSTS_PRELOAD = True 
 SECURE_CONTENT_TYPE_NOSNIFF = True 

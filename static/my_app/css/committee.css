@@ -13,7 +13,6 @@ body{
 .heading {
 	text-align: center;
 	padding: 5px;
-	/*margin-top: 15px;*/
 }
 .heading h2{
 	color: lightgray;
@@ -126,7 +125,6 @@ body{
 @media screen and (max-width: 573px){
 	.committee-container .card{
 		width: 300px;
-		/*padding-bottom: 0;*/
 	}
 
 	.info{

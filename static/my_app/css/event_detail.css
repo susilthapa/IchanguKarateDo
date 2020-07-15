@@ -12,8 +12,6 @@ body{
 }
 
 .event-detail{
-	/*background-color: white;*/
-	/*color: black;*/
 	display: flex;
 	flex-direction: column;
 
@@ -67,10 +65,6 @@ body{
 }
 
 
-/*.event-children .main-image img{
-	max-width: 85%;
-}
-*/
 .event-detail .event-children p{
 	font-style: italic;
 }

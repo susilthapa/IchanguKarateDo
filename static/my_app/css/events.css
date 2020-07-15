@@ -13,7 +13,6 @@ body{
 
 p{
 	font-size: 14px;
-	/*font-weight: 300;*/
 	line-height: 1.5;
 }
 
@@ -161,7 +160,6 @@ p{
 		padding: 14px 25px 14px 40px;
 	}
 	.content{
-		/*margin: 25px;*/
 		padding-bottom: 30px;
 	}
 
@@ -205,12 +203,6 @@ p{
 	}	
 }
 
-
-/*@media screen and (max-width: 420px){
-	.main{
-		padding: 15px 25px;
-	}
-}*/
 
 @media screen and (max-width: 320px){
 	.main{

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+	
+	<link rel="stylesheet" href="{% static 'my_app/css/error_page.css' %}">
+	
+{% endblock %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>Oops! Page you are looking for is not found</h2>
+		<a href="{% url 'home' %}">Go back to home</a>
+	</div>
+
+
+{% endblock %}
+

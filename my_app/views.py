@@ -108,7 +108,7 @@ class ContactPagView(TemplateView):
 		
 		send_mail(subject='From Ichangu Karate-Do',
 					message = f"{name}: {message} via {email}",
-					from_email = settings.EMAIL_HOST_USER,
+					from_email = email,
 					recipient_list=['srjthapa53@gmail.com'],
 					fail_silently=False
 					)
@@ -118,6 +118,8 @@ class ContactPagView(TemplateView):
 
 
 
+def error_404_view(request, exception):
+	return render(request, '404.html', status=404)
 
-
-
+def error_500_view(request, exception):
+	return render(request, '500.html', status=500)

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 
 from django.contrib.auth.models import Group
 
@@ -13,7 +14,6 @@ from .models import (
 	Contact,
 	)
 
-admin.site.unregister(Group)
 
 admin.site.register(Home)
 
@@ -55,3 +55,23 @@ class ContactAdmin(admin.ModelAdmin):
 	list_display = ('title', 'phone_one', 'phone_two', 'email')
 admin.site.register(Contact, ContactAdmin)
 
+
+
+# Admin page for client
+
+from django.contrib.admin import AdminSite
+class IchanguAdminSite(AdminSite):
+    site_header = "Ichangu Admin"
+    site_title = "Ichangu Karate Do"
+    index_title = "Welcome to Ichangu AdminPage"
+
+ichangu_admin_site = IchanguAdminSite(name='ichangu_admin')
+
+ichangu_admin_site.register(Home)
+ichangu_admin_site.register(Committee, CommitteeAdmin)
+ichangu_admin_site.register(EventDetails)
+ichangu_admin_site.register(Events, EventsAdmin)
+ichangu_admin_site.register(Players, PlayersAdmin)
+ichangu_admin_site.register(ImageSlider)
+ichangu_admin_site.register(Videos)
+ichangu_admin_site.register(Contact, ContactAdmin)

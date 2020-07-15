@@ -6,7 +6,12 @@
 
 {% block content %}
 
-<!--    <div style="height:80vh; border:1px solid red;"></div>-->
+	<div class="preloader">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+
 	<div class="ddd-container">    
 	    <div class="ddd" id="ddd">
 	    	<div class="d1">
@@ -44,7 +49,25 @@
 {% endblock %}
 
 {% block script %}
-	<script>
+	<script>	
+		let preloader = document.querySelector('.preloader')
+
+		function init(){
+			setTimeout(()=>{
+				preloader.parentElement.removeChild(preloader)
+			}, 3000)
+		}
+
+		if(!sessionStorage.getItem('doNotShow')){
+			sessionStorage.setItem('doNotShow', true)
+			init()
+		} else{
+			preloader.parentElement.removeChild(preloader)
+			const d2 = document.querySelectorAll('.d2 h2')
+			for(let i = 0; i<d2.length; i++){
+				d2[i].style.animationDelay = "0s";
+			}
+		}
 		document.getElementById('ddd').style.backgroundImage = 'url("{{home.bg_image.url}}")'
 		gsap.from('.abt1', {scrollTrigger:{trigger: '.abt1',toggleActions: "restart pause resume"},
 			 x:-500,

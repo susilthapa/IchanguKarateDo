@@ -38,17 +38,14 @@ ol li::before {
 
 .preview-container{
 	max-width: 800px;
-	height: 350px;
+	height: 450px;
 	margin: auto;
 	overflow: hidden;
 	margin-bottom: 5px;
-	/*border: 1px solid red;*/
 	position: relative;
 	display: flex;
 	justify-content: center;
 	transition: height 600ms ease-out;
-
-	/*height: */
 
 }
 
@@ -76,7 +73,6 @@ ol li::before {
 	max-width: 100%;
 	display: flex;
 	margin: auto;
-	/*overflow: hidden;*/
 }
 
 .preview img{
@@ -84,7 +80,6 @@ ol li::before {
 	display: none;
 	animation: fade .8s ease-in-out;
 	cursor: pointer;
-	/*height: 100%;*/
 }
 
 .preview img:hover, #lightbox img{
@@ -106,7 +101,7 @@ ol li::before {
 
 .gallery-nav{
 	position: sticky;
-	top: 100px;
+	top: 90px;
 	z-index: 1;
 }
 .gallery-nav ul{
@@ -116,7 +111,6 @@ ol li::before {
     margin: auto;
     justify-content: space-around;
     align-items: center;
-    /*margin-top: 15px;*/
     margin-bottom: 30px;
     padding: 10px;
 }
@@ -131,7 +125,6 @@ ol li::before {
 	width: 25%;
     text-align: center;
     transition: all .5s;
-    /*transition: color 1s;*/
 }
 
 .gallery-nav a{
@@ -325,6 +318,10 @@ ol li::before {
 		max-width: 900px;
 		height: 500px;
 	}
+
+	.gallery-nav{
+		top: 120px;
+	}
 	.gallery-nav li{
 		padding: 35px;
 	}
@@ -410,26 +407,6 @@ ol li::before {
 		width: 100%;
 	}
 
-/*	#one-one .medal-card{
-		flex-direction: column;
-	    height: 500px;
-
-	}*/
-
-/*	.medal-card .medal-img{
-		width: 100%;
-		max-height: 70%;
-	}
-*/
-/*	.medal-card .container{
-		height: 26%;
-	    width: 100%;
-	    margin-top: 15px;
-	    margin-left: 0;
-	    margin-bottom: 5px;
-	}
-}*/
-
 
 @media screen and (max-width: 500px){
 	.gallery-nav{
@@ -445,9 +422,7 @@ ol li::before {
 		margin-top: 5px;
 	}
 
-	/*#one-one .medal-card{
-		height: 200px;
-	}*/
+
 	.all-images{
 		width: 320px;
 		height: 220px;
@@ -465,6 +440,13 @@ ol li::before {
 	.image-container{
 		margin-top: 45px;
 	}
+}
+
+@media screen and (max-height: 555px){
+	.gallery-nav{
+		top: 70px;
+	}	
+
 }
 
 

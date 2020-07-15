@@ -5,9 +5,55 @@
 
 }
 
-/*html{
-	scroll-behavior: smooth;
-}*/
+
+.preloader{
+	position: fixed;
+	z-index: 999999;
+	background-color: #333;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.circle {
+	display: inline-block;
+	background-color: #53b356;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	transform: translate3d(0);
+	animation: bounce 0.6s infinite alternate;
+	margin: 0 5px;
+}
+
+
+.circle:nth-child(2){
+	background-color: lightgrey;
+	animation-delay: 0.2s;
+}
+
+.circle:nth-child(3){
+	animation-delay: 0.4s;
+}
+
+@keyframes rotate{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes bounce{
+	to{
+		width: 16px;
+		height: 16px;
+		transform: translate3d(0, -16px, 0);
+	}
+}
+
+
 
 h1,h2, h3, h4{
 	color: #53b356;
@@ -29,7 +75,6 @@ li{
 
 
 body{
-	/*position: relative;*/
 	font-size: 18px;
 	overflow-x: hidden;
 	color: #fff;
@@ -48,7 +93,7 @@ header {
 	background-color:#0d0d0d;
 	z-index:99;
 	width: 100%;
-	height: 100px;
+	height: 90px;
 	align-items: center;
 	animation: heads 2.5s ease forwards;
 
@@ -73,7 +118,7 @@ header {
 }
 
 .logo{
-	height: 90px;
+	height: 80px;
 	border-radius: 50%;
 }
 .logo-text{
@@ -122,14 +167,6 @@ nav{
 	display: inline-block;
 }
 
-/*#dropdown ul{
-	position: absolute;
-	top: 32;
-	left: -5;
-	background-color: #878787;
-	border: 1px solid green;
-	border-radius: 5px;
-}*/
 
 .dropdown-links{
 	display: none;
@@ -137,7 +174,6 @@ nav{
   	background-color: #F3EEED;
   	min-width: 100px;
   	z-index: 1;
-  	/*border-radius: 5px;*/
   	padding-top: 5px;
   	left: -1;
   	top: 100%;
@@ -162,10 +198,6 @@ nav{
 	color: red;
 }
 
-#dropdown:hover ul{
-	/*display: block;*/
-}
-
 .ddd-container{
 	height: 100vh;
 	overflow: hidden;
@@ -180,7 +212,7 @@ nav{
 	align-items: flex-end;
 	font-style: italic;
 	background-repeat: no-repeat;
-    background-position: top 15px center;
+    background-position: top 5px center;
 	background-size: cover;
 }
 
@@ -192,16 +224,8 @@ nav{
 	width: 90%;
 	justify-content: center;
 	text-align: center;
-	/*animation: d1_ani 1s linear;*/
 }
 
-
-/*@keyframes d1_ani{
-	from{
-
-		transform: scale(.4);
-	}
-}*/
 
 .ddd .d1 img{
 	height: 65px;
@@ -229,34 +253,27 @@ nav{
 	opacity: 0.6;
 }
 
-.ddd h2{
-}
-
 .ddd .d2 h2:nth-child(1){
 	animation: grow 1s;
+	animation-delay: 3.5s;
+
 }
 .ddd .d2 h2:nth-child(2){
-    /*animation-delay:1s;*/
     animation: grow 2s;
+	animation-delay: 3.5s;
 }
 
 .ddd .d2 h2:nth-child(3){
     animation: grow 3s;
+	animation-delay: 3.5s;
 }
 .ddd .d2 h2{
 	color: yellow;
 	margin-left: 10px;
-	/*font-family: Times New Roman;*/
-}
-/*
-#onen{
-    animation: zoom .4s ease-in;
-	animation-delay: 1s;
 
-}*/
+}
 
 main{
-    /*border:1px solid red;*/
     padding: 20px;
     width:100%;
 }
@@ -272,10 +289,8 @@ main{
 }
 
 hr{
-	/*color: #333;*/
 	border: 1px solid #333;
 	width: 100%;
-	/*margin-bottom: 5px;*/
 }
 
 .about .abt1{
@@ -315,7 +330,6 @@ hr{
 
 
 footer{
-	/*background-color: #050505;*/
 	background-color: #0d0d0d;
 	height: 100px;
 	font-size: 80%;
@@ -345,16 +359,6 @@ footer{
 }
 
 
-/*@keyframes bg{
-    0%{
-        background-position: center;
-
-    }
-
-    100%{
-        background-position: cover;
-    }
-}*/
 
 @keyframes heads {
 	from{
@@ -368,7 +372,17 @@ footer{
 
 
 @media screen and (min-width: 1400px){
+	header{
+		height: 120px;
+	}
 
+	.ddd{
+		background-position: top 15px center;
+	}
+
+	.logo{
+		height: 90px;
+	}
 	body{
 		font-size: 30px;
 	}
@@ -408,7 +422,7 @@ footer{
 
 @media screen and (max-width:1168px){
 	.ddd{
-		background-position: top 40px center;
+		background-position: top 30px center;
 	}
 }
 
@@ -426,8 +440,6 @@ footer{
 	.logo-container h1{
 		font-size: 22px;
 	}
-	/*.main-image img{
-		height: 80vh;	}*/
 
 }
 
@@ -438,7 +450,7 @@ footer{
 		margin-left: 5px;
 	}
 	.logo{
-		height: 70px;
+		height: 60px;
 	}
 
 	.ddd{
@@ -486,7 +498,6 @@ footer{
 		cursor: pointer;
 		z-index: 1;
 		right: 5%;
-		/*top:50%;*/
 		transform: translate(-5%, -50%);
 	}
 	
@@ -500,7 +511,6 @@ footer{
 		background: #212121;
 		height: 100vh;
 		width: 100%;
-		/*align-items: flex-end;*/
 		flex-direction: column;
 		justify-content: space-evenly;
 		clip-path: circle(100px at 105% -35%);
@@ -577,10 +587,6 @@ footer{
   		font-size: 12px;
   	}
 
-	.logo{
-  	    height: 60px;
-    }
-
 	footer{
 		text-align: center;
 	}
@@ -588,9 +594,12 @@ footer{
 }
 
 
-@media screen and (max-height: 55px){
+@media screen and (max-height: 555px){
+	header{
+		height: 70px;
+	}
 	.ddd{
-		background-position: top 70px center;
+		background-position: top 30px center;
 
 	}
 }

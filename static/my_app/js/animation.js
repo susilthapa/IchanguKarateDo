@@ -1,23 +1,18 @@
-
-
-
 document.addEventListener("DOMContentLoaded", ()=>{
-// window.onload =
-	// response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
-	// document.cookie = 'samesite=strict'
 
 
-		/*=====
-			Burger Navigation
-		========*/	
+	/*=====
+		Burger Navigation
+	========*/	
+	
+	// console.log(preloader.parentElement)
+	const burger = document.getElementsByClassName('burger')
+	const main_nav = document.getElementsByClassName('main-nav')
 
-		const burger = document.getElementsByClassName('burger')
-		const main_nav = document.getElementsByClassName('main-nav')
+	burger[0].addEventListener('click', ()=>{
+		main_nav[0].classList.toggle('open')
 
-		burger[0].addEventListener('click', ()=>{
-			main_nav[0].classList.toggle('open')
-
-		})
+	})
 		
 
 
