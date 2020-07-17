@@ -242,6 +242,7 @@ nav{
 	color: #53b356;
 	margin: 0 7px;
 	font-size: 27px;
+	padding: 0 5px;
 }
 
 .ddd .d2 {
@@ -466,6 +467,10 @@ footer{
 		width: 90%;
 	}
 
+	.about .abt2{
+		margin-top: 5px;
+		
+	}
 	.about .abt2 img{
 		height: 300px;
 	}
