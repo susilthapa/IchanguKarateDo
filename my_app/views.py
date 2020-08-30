@@ -98,13 +98,7 @@ class ContactPagView(TemplateView):
 	def post(self, *args, **kwargs):
 		name = self.request.POST.get('name')
 		email = self.request.POST.get('email')	
-		message = self.request.POST.get('message')	
-
-		
-		
-		
-
-		
+		message = self.request.POST.get('message')			
 		
 		send_mail(subject='From Ichangu Karate-Do',
 					message = f"{name}: {message} via {email}",
@@ -121,5 +115,5 @@ class ContactPagView(TemplateView):
 def error_404_view(request, exception):
 	return render(request, '404.html', status=404)
 
-def error_500_view(request, exception):
+def error_500_view(request):
 	return render(request, '500.html', status=500)

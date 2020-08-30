@@ -88,7 +88,7 @@ form{
 .social-app{
 	display: flex;
 	width: 65%;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	border-top: 1px solid #333;
 	padding-top: 5px;
 }
